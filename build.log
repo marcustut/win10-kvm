@@ -1,0 +1,70 @@
+Building commit : 163a2e5d0a1168637da2524717b1328165c3c0b0
+Build started at: 2019-Jul-23 13:02:01
+
+COMMAND: git checkout --quiet -b build 'origin/Release/B1'
+
+COMMAND: git checkout --quiet '163a2e5d0a1168637da2524717b1328165c3c0b0' . 
+
+COMMAND: cmake -DCMAKE_TOOLCHAIN_FILE=../repo/c-host/toolchain-mingw64.cmake -DNVFBC_SDK='/workspace/NVIDIA Capture SDK' -DUSE_NVFBC=1 ../repo/c-host
+-- The C compiler identification is GNU 6.3.0
+-- Check for working C compiler: /usr/bin/x86_64-w64-mingw32-gcc
+-- Check for working C compiler: /usr/bin/x86_64-w64-mingw32-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test COMPILER_SUPPORTS_MARCH_NATIVE
+-- Performing Test COMPILER_SUPPORTS_MARCH_NATIVE - Success
+-- The CXX compiler identification is GNU 6.3.0
+-- Check for working CXX compiler: /usr/bin/x86_64-w64-mingw32-g++
+-- Check for working CXX compiler: /usr/bin/x86_64-w64-mingw32-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- 
+-- The following features have been enabled:
+
+ * ENABLE_BACKTRACE , Backtrace support.
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspace/build
+
+COMMAND: make
+Scanning dependencies of target lg_common
+[  5%] Building C object common/CMakeFiles/lg_common.dir/src/stringutils.c.obj
+[ 10%] Building C object common/CMakeFiles/lg_common.dir/src/stringlist.c.obj
+[ 15%] Building C object common/CMakeFiles/lg_common.dir/src/option.c.obj
+[ 21%] Building C object common/CMakeFiles/lg_common.dir/src/crash.windows.c.obj
+[ 26%] Building C object common/CMakeFiles/lg_common.dir/src/sysinfo.windows.c.obj
+[ 31%] Linking C static library liblg_common.a
+[ 31%] Built target lg_common
+Scanning dependencies of target capture_DXGI
+[ 36%] Building C object platform/Windows/capture/DXGI/CMakeFiles/capture_DXGI.dir/src/dxgi.c.obj
+[ 42%] Linking C static library libcapture_DXGI.a
+[ 42%] Built target capture_DXGI
+Scanning dependencies of target capture_NVFBC
+[ 47%] Building C object platform/Windows/capture/NVFBC/CMakeFiles/capture_NVFBC.dir/src/nvfbc.c.obj
+[ 52%] Building CXX object platform/Windows/capture/NVFBC/CMakeFiles/capture_NVFBC.dir/src/wrapper.cpp.obj
+[ 57%] Linking CXX static library libcapture_NVFBC.a
+[ 57%] Built target capture_NVFBC
+Scanning dependencies of target capture
+[ 63%] Building C object platform/Windows/capture/CMakeFiles/capture.dir/__/__/__/src/capture.c.obj
+[ 68%] Linking C static library libcapture.a
+[ 68%] Built target capture
+Scanning dependencies of target platform_Windows
+[ 73%] Building C object platform/Windows/CMakeFiles/platform_Windows.dir/src/platform.c.obj
+[ 78%] Building C object platform/Windows/CMakeFiles/platform_Windows.dir/src/windebug.c.obj
+[ 84%] Building C object platform/Windows/CMakeFiles/platform_Windows.dir/src/mousehook.c.obj
+[ 89%] Linking C static library libplatform_Windows.a
+[ 89%] Built target platform_Windows
+Scanning dependencies of target looking-glass-host
+[ 94%] Building C object CMakeFiles/looking-glass-host.dir/src/app.c.obj
+[100%] Linking C executable looking-glass-host.exe
+[100%] Built target looking-glass-host
+
+COMMAND: x86_64-w64-mingw32-strip '/workspace/build/looking-glass-host.exe'
+
+Build completed successfully
+2019-Jul-Tue 01:01:08
