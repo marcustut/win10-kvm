@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# starts win10 vm
+sudo virsh start win10

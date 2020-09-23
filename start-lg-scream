@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# starts Looking Glass and ignores all output
+/usr/bin/looking-glass-client -s -a > /dev/null 2>&1 & 
+
+# starts Scream with IVSHMEM
+/usr/bin/scream -i br0
+
+# wait for any of the processes to exit. (Like closing the Looking Glass window)
+wait -n
+
+# kill the remaining processes (Like scream)
+pkill -P $$
